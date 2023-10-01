@@ -1,8 +1,7 @@
 #include <iostream>
 #include <random>
-
-#include "vector.h"
-// #include "list.h"
+//#include "vector.h"
+#include "list.h"
 
 int main(int argc, char **argv) {
     if(argc != 2) {
@@ -18,17 +17,16 @@ int main(int argc, char **argv) {
     std::uniform_int_distribution<> randint(1, INT_MAX);
 
     for(int i = 0; i < number; ++i){    
-        int number =  randint(gen);
-        list.insert(number);
+        list.insert(testobject());
     }
     
-    // list.print();
+    list.print();
 
-    for(int i = number; i > 0; --i){
+    /*for(int i = number; i > 0; --i){
         int index = randint(gen) % i;
         list.remove(index);
         // list.print();
-   }
+   }*/
 
     return 0;
 }

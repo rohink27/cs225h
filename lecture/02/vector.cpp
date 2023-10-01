@@ -1,14 +1,16 @@
 #include "vector.h"
 #include <iostream>
 
-void List::insert(int number) {
+void List::insert(testobject test) {
 
-    list_.insert(std::upper_bound( list_.begin(), list_.end(), number), number);
-    // auto it = list_.begin();
+    //list_.insert(std::upper_bound( list_.begin(), list_.end(), number), number);
+     auto it = list_.begin();
     // while (it != list_.end() && (*it < number)) {
     //     ++it;
     // }
     // list_.insert(it,number);
+    list_.insert(list_.begin(), test);
+    //list_.push_back(test);
 }
 
 void List::remove(int index) {
@@ -24,8 +26,8 @@ void List::remove(int index) {
 
 void List::print() {
 
-    for( int num : list_) {
-        std::cout << num << " ";
+    for( testobject num : list_) {
+       // std::cout << num.a[0] << " ";
     }
     std::cout << std::endl;
 }

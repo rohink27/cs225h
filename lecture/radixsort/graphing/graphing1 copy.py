@@ -13,7 +13,7 @@ x_axis2 = x_axis2[3::5]
 y_axis2 = y_axis2[3::5]
 y_axis = 1000 * y_axis
 y_axis2 = 1000 * y_axis2
-plt.plot(x_axis, y_axis, label= "standard sort")
+plt.plot(x_axis, y_axis, label= "standad sort")
 plt.plot(x_axis2, y_axis2, label="radix sort")
 plt.xlabel("Number of Digits")
 plt.ylabel("Time in ms")

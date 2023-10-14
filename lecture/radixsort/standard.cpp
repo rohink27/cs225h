@@ -50,7 +50,7 @@ int main(int argc, char **argv)
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
     ofstream MyExcelFile;
-    MyExcelFile.open("standard.csv", std::ios::app);
+    MyExcelFile.open("data/standard.csv", std::ios::app);
 
     //MyExcelFile << "Number of Digits, Sample Size, Time" << endl;
     MyExcelFile << number_of_digits<<", "<< sample_size<<", "<< duration.count() << endl;

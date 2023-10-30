@@ -28,27 +28,18 @@ void prefix_sum_parallel_2threads(std::vector<int>& a){
  void prefix_sum_parallel_4threads(std::vector<int>& a){  
     #pragma omp parallel
     for(int i =(omp_get_thread_num()==0)?0:((omp_get_thread_num())*(a.size()-1)/omp_get_max_threads()) + 1; i< (omp_get_thread_num()+1)*(a.size()-1)/omp_get_max_threads(); i++)
-    a[i+1]+=a[i];
+        a[i+1]+=a[i];
     
-
-
     std::vector<int> linear(omp_get_max_threads());
   
     linear[0]=0;
     for(int i = 1; i< linear.size(); i++){
         linear[i]= a[i*(a.size()-1)/omp_get_max_threads()];
         linear[i]+=linear[i-1];
-
     }
-
     #pragma omp parallel
     for(int i =(omp_get_thread_num()==0)?0:((omp_get_thread_num())*(a.size()-1)/omp_get_max_threads()) + 1; i<= (omp_get_thread_num()+1)*(a.size()-1)/omp_get_max_threads(); i++)
-    a[i]+=linear[omp_get_thread_num()];
-    
-    
-    
-
-
+        a[i]+=linear[omp_get_thread_num()];
 }
 
 void print_vector(std::vector<int>& a){
